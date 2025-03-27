@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="BOB.ico" type="image/x-icon">
+    <title>Podpora - Otázky a Odpovede</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background: linear-gradient(90deg, #1d11c1, #757575);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #1d11c1;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 1.2rem;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffc107;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+        }
+
+        .question h3 {
+            font-size: 1.4rem;
+            color: #007BFF;
+            margin-bottom: 10px;
+        }
+
+        .question p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .admin-response {
+            margin-top: 10px;
+            padding: 15px;
+            background-color: #e8f5e9;
+            border-left: 4px solid #28a745;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .add-question-form input, .add-question-form textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .add-question-form button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-question-form button:hover {
+            background-color: #0056b3;
+        }
+
+        .empty-message {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Podpora - Otázky a Odpovede</h1>
+        <p>Nechajte si poradiť alebo odpovedzte na vaše otázky.</p>
+    </header>
+
+    <!-- Text-Based Menu -->
+    <nav>
+        <a href="hry.html">Hry</a>
+        <a href="Blog.html">Blog</a>
+        <a href="support.html">Podpora</a>
+        <a href="index.html">Domov</a>
+        <a href="Dejepis.html">Dejepis</a>
+    </nav>
+
+    <div class="container" id="questionContainer">
+        <h2>Otázky používateľov</h2>
+        <!-- Dynamically generated questions will appear here -->
+    </div>
+
+    <div class="container add-question-form">
+        <h2>Pridaj otázku</h2>
+        <input type="text" id="questionAuthor" placeholder="Tvoje meno" required>
+        <textarea id="questionContent" rows="3" placeholder="Napíš svoju otázku" required></textarea>
+        <button onclick="addQuestion()">Pridať otázku</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 JKN Studio. Všetky práva vyhradené.</p>
+    </footer>
+
+    <script>
+        const ADMIN_CODE = "S0/M H2R4 24/.7";
+        let questions = JSON.parse(localStorage.getItem("supportQuestions")) || [];
+
+        function loadQuestions() {
+            const container = document.getElementById("questionContainer");
+            container.innerHTML = "";
+
+            if (questions.length === 0) {
+                container.innerHTML = "<p class='empty-message'>Zatiaľ tu nie sú žiadne otázky. Buď prvý!</p>";
+                return;
+            }
+
+            questions.forEach((question, index) => {
+                const questionDiv = document.createElement("div");
+                questionDiv.classList.add("question");
+                questionDiv.innerHTML = `
+                    <h3>${question.author}:</h3>
+                    <p>${question.content}</p>
+                    ${question.response ? `<div class="admin-response"><strong>Admin:</strong> ${question.response}</div>` : ""}
+                `;
+                container.appendChild(questionDiv);
+            });
+        }
+
+        function addQuestion() {
+            const author = document.getElementById("questionAuthor").value;
+            const content = document.getElementById("questionContent").value;
+
+            if (author && content) {
+                questions.push({ author, content, response: null });
+                localStorage.setItem("supportQuestions", JSON.stringify(questions));
+                loadQuestions();
+                document.getElementById("questionAuthor").value = "";
+                document.getElementById("questionContent").value = "";
+            } else {
+                alert("Vyplň všetky polia, aby si mohol pridať otázku.");
+            }
+        }
+
+        window.onload = loadQuestions;
+    </script>
+</body>
+</html>

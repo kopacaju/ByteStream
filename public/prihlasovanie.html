@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="BOB.ico" type="image/x-icon">
+    <title>Moja Hlavná Stránka - JKN Studio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background: linear-gradient(90deg, #1d11c1, #757575);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #1d11c1;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #ffc107;
+        }
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .login-form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .login-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-form button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#login">Prihlásenie</a></li>
+            <li><a href="index.html">Moje projekty</a></li>
+        </ul>
+    </nav>
+    <main>
+        </section>
+
+        <section id="projects">
+            <div class="content-grid">
+                <!-- Obsah projektov -->
+            </div>
+        </section>
+        <section id="register">
+            <div class="login-form">
+                <h2>Registrácia</h2>
+                <form method="POST" action="spracuj_registraciu.php">
+                    <input type="text" name="meno" placeholder="Vaše meno" required>
+                    <input type="email" name="email" placeholder="Váš email" required>
+                    <input type="password" name="heslo" placeholder="Vaše heslo" required>
+                    <button type="submit">Registrovať sa</button>
+                 
+                </form>
+            </div>
+        </section>
+        
+        <section id="login">
+            <div class="login-form">
+                <h2>Prihlásenie</h2>
+                <form method="POST" action="spracuj_prihlasenie.php">
+                    <input type="email" name="email" placeholder="Váš email" required>
+                    <input type="password" name="heslo" placeholder="Vaše heslo" required>
+                    <button type="submit">Prihlásiť sa</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Tvoja Stránka. Všetky práva vyhradené.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Hry.ico" type="image/x-icon">
+    <title>Hry Štúdia JKN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background: linear-gradient(90deg, #1d11c1, #757575);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #1d11c1;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 1.2rem;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffc107;
+        }
+
+        .game-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .game-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 20px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .game-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .game-card h2 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .game-card p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .game-card .button-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .game-card button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .game-card .download-btn {
+            background-color: #28a745;
+        }
+
+        .game-card .download-btn:hover {
+            background-color: #218838;
+        }
+
+        .game-card .details-btn {
+            background-color: #007BFF;
+        }
+
+        .game-card .details-btn:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hry Štúdia JKN</h1>
+        <p>Objav naše najnovšie herné projekty a uži si zábavu!</p>
+    </header>
+
+    <!-- Text-Based Menu -->
+    <nav>
+        <a href="index.html">Domov</a>
+        <a href="Blog.html">Blog</a>
+        <a href="support.html">Podpora</a>
+        <a href="hry.html">Hry</a>
+        <a href="development.html">Vo vývoji</a>
+        <a href="Dejepis.html">Dejepis</a>
+        <a href="Mody-Aplikacie.html">Mody a Aplikácie</a>
+    </nav>
+
+    <div class="game-container">
+        <!-- Hra: Adventure Quest -->
+        <div class="game-card">
+            <img src="path-to-adventure-game-image.jpg" alt="Adventure Quest">
+            <h2>Adventure Quest</h2>
+            <p>Zaži epické dobrodružstvo plné výziev a prekážok!</p>
+            <div class="button-row">
+                <button class="download-btn" onclick="location.href='path-to-adventure-game.zip'" download>Stiahnuť</button>
+                <button class="details-btn" onclick="location.href='adventure-quest.html'">Viac o hre</button>
+            </div>
+        </div>
+
+        <!-- Hra: Formula Dream -->
+        <div class="game-card">
+            <img src="path-to-racing-game-image.jpg" alt="Formula Dream">
+            <h2>Formula Dream</h2>
+            <p>Pretekaj na tých najrýchlejších tratiach a staň sa šampiónom!</p>
+            <div class="button-row">
+                <button class="download-btn" onclick="location.href='path-to-formula-dream.zip'" download>Stiahnuť</button>
+                <button class="details-btn" onclick="location.href='formula-dream.html'">Viac o hre</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 JKN Studio. Všetky práva vyhradené.</p>
+    </footer>
+</body>
+</html>

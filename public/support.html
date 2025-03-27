@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Najčastejšie otázky (FAQ)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background: linear-gradient(90deg, #1d11c1, #757575);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #1d11c1;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 1.2rem;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffc107;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            color: #555;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .faq-item h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #007BFF;
+            cursor: pointer;
+        }
+
+        .faq-item p {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #333;
+            display: none; /* Hidden by default */
+        }
+
+        .faq-item h3:hover {
+            text-decoration: underline;
+        }
+
+        .ask-button {
+            display: block;
+            margin: 30px auto;
+            padding: 10px 20px;
+            font-size: 1rem;
+            text-align: center;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .ask-button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Najčastejšie otázky</h1>
+        <p>Odpovede na vaše najčastejšie otázky.</p>
+    </header>
+
+    <!-- Text-Based Menu -->
+    <nav>
+        <a href="hry.html">Hry</a>
+        <a href="Blog.html">Blog</a>
+        <a href="support.html">Podpora</a>
+        <a href="index.html">Domov</a>
+        <a href="Dejepis.html">Dejepis</a>
+        <a href="Mody-Aplikacie.html">Mody a Aplikácie</a>
+        
+    </nav>
+
+    <div class="faq-container">
+        <!-- Otázky a odpovede -->
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(0)">1. Ako môžem pridať článok na blog?</h3>
+            <p id="answer-0">Pre pridanie článku prejdite na stránku blogu a kliknite na "Napíš článok". Vyplňte formulár a článok sa zobrazí na stránke.</p>
+        </div>
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(1)">2. Kde nájdem vaše hry?</h3>
+            <p id="answer-1">Naše hry nájdete v sekcii "Hry", kde sú všetky projekty vytvorené pod štúdiom JKN.</p>
+        </div>
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(2)">3. Ako kontaktovať administrátora?</h3>
+            <p id="answer-2">Administrátora môžete kontaktovať cez sekciu "Podpora", kde zadáte svoju otázku. Po odpovedi sa zobrazí v sekcii podpory.</p>
+        </div>
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(3)">4. Ako uzatvoriť otázku?</h3>
+            <p id="answer-3">Iba administrátor môže uzatvoriť otázku pomocou špeciálneho kódu. Otázka zmizne automaticky po nastavenom čase.</p>
+        </div>
+    </div>
+
+    <!-- Button to ask a question -->
+    <button class="ask-button" onclick="redirectToQuestions()">Spýtať sa</button>
+
+    <footer>
+        <p>&copy; 2025 JKN Studio. Všetky práva vyhradené.</p>
+    </footer>
+
+    <script>
+        // Function to toggle answer visibility
+        function toggleAnswer(index) {
+            const answer = document.getElementById(`answer-${index}`);
+            answer.style.display = answer.style.display === "block" ? "none" : "block";
+        }
+
+        // Function to redirect to ask a question
+        function redirectToQuestions() {
+            window.location.href = "otazky.html";
+        }
+    </script>
+</body>
+</html>

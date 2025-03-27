@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="BOB.ico" type="image/x-icon">
+    <title>Napíš článok</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background: linear-gradient(90deg, #1d11c1, #757575);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #1d11c1;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 1.2rem;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffc107;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-container input, .form-container textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background-color: #555;
+        }
+
+        .back-button {
+            font-size: 1rem;
+            color: #007BFF;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            color: #0056b3;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Napíš článok</h1>
+        <p>Pridaj svoj vlastný obsah a zapoj sa do našej komunity.</p>
+    </header>
+
+    <!-- Text-Based Menu -->
+    <nav>
+        <a href="hry.html">Hry</a>
+        <a href="Blog.html">Blog</a>
+        <a href="support.html">Podpora</a>
+        <a href="index.html">Domov</a>
+    </nav>
+
+    <div class="form-container">
+        <a href="Blog.html" class="back-button">← Späť</a>
+        <label for="author">Tvoje meno:</label>
+        <input type="text" id="author" placeholder="Zadaj svoje meno">
+        
+        <label for="title">Názov článku:</label>
+        <input type="text" id="title" placeholder="Zadaj názov článku">
+
+        <label for="content">Obsah článku:</label>
+        <textarea id="content" rows="5" placeholder="Napíš obsah článku"></textarea>
+
+        <button onclick="savePost()">Publikovať článok</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 JKN Studio. Všetky práva vyhradené.</p>
+    </footer>
+
+    <script>
+        function savePost() {
+            const author = document.getElementById('author').value;
+            const title = document.getElementById('title').value;
+            const content = document.getElementById('content').value;
+            const date = new Date().toLocaleDateString();
+
+            if (author && title && content) {
+                const post = { author, title, content, date };
+                const posts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+                posts.push(post);
+                localStorage.setItem('blogPosts', JSON.stringify(posts));
+
+                alert('Článok bol úspešne publikovaný!');
+                window.location.href = 'Blog.html';
+            } else {
+                alert('Vyplň všetky polia, aby si mohol publikovať článok.');
+            }
+        }
+    </script>
+</body>
+</html>
