@@ -4,5 +4,5 @@ const connectorConfig = {
   service: 'stranka',
   location: 'us-central1'
 };
-exports.connectorConfig = connectorConfig;
+module.exports = { connectorConfig };
 

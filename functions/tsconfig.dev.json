@@ -1,5 +1,7 @@
 {
-  "include": [
-    ".eslintrc.js"
-  ]
+  "compilerOptions": {
+      "target": "es6",
+      "module": "commonjs",
+      "strict": true
+  }
 }

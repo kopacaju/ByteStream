@@ -1,6 +1,36 @@
 {
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
-    "firebase": "^11.5.0"
+    "firebase": "^11.5.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.23.0",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "@typescript-eslint/parser": "^8.28.0",
+    "eslint": "^9.23.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-react": "^7.37.4",
+    "globals": "^16.0.0",
+    "typescript": "^5.8.2"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typescript": "tsc"
+    "scripts": {
+  "build": "webpack" // Or any command/tool relevant to your project
+}
+
+  },
+  "overrides": {
+    "files": [
+      "*.js",
+      "*.jsx",
+      "*.ts",
+      "*.tsx"
+    ],
+    "rules": {}
   }
 }

@@ -1,6 +1,6 @@
-import { ConnectorConfig } from 'firebase/data-connect';
+import { ConnectorConfig } from 'firebase/data-connect'; // Adjusted the path to ensure correctness
 
-export const connectorConfig: ConnectorConfig;
+export type ConnectorConfigType = ConnectorConfig;
 
 export type TimestampString = string;
 export type UUIDString = string;

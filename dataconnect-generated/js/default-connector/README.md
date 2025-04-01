@@ -1,9 +1,9 @@
 # Table of Contents
-- [**Overview**](#generated-typescript-readme)
-- [**Accessing the connector**](#accessing-the-connector)
-  - [*Connecting to the local Emulator*](#connecting-to-the-local-emulator)
-- [**Queries**](#queries)
-- [**Mutations**](#mutations)
+- [Overview](#generated-typescript-readme)
+- [Accessing the connector](#accessing-the-connector)
+  - [Connecting to the local Emulator](#connecting-to-the-local-emulator)
+- [Queries](#queries)
+- [Mutations](#mutations)
 
 # Generated TypeScript README
 This README will guide you through the process of using the generated TypeScript SDK package for the connector `default`. It will also provide examples on how to use your generated SDK to call your Data Connect queries and mutations.
